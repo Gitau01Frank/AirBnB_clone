@@ -36,7 +36,7 @@ class HBNBCommand(cmd.Cmd):
         prompt (str): The command prompt.
     """
 
-    prompt = '(hbnb) ' if sys.__stdin__.isatty() else ''
+    prompt = '(hbnb) '
 
     classes = {
                'BaseModel': BaseModel, 'User': User, 'Place': Place,
