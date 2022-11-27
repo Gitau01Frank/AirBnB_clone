@@ -43,11 +43,9 @@ class BaseModel:
         my_dict["__class__"] = str(type(self).__name__)
         my_dict["created_at"] = self.created_at.isoformat()
         my_dict["updated_at"] = self.updated_at.isoformat()
-        my_dict.pop("_sa_instance_state", None)
         return my_dict
 
     def __str__(self):
         """Returns the print/str representation of the BaseModel instance"""
         dict = self.__dict__.copy()
-        dict.pop("_sa_instance_state", None)
         return "[{}] ({}) {}".format(type(self).__name__, self.id, dict)
